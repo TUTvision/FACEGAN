@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-11-11 Wed 16:46 -->
+<!-- 2021-01-24 Sun 15:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>FACEGAN: Facial Attribute Controllable rEenactment GAN</title>
@@ -268,25 +268,25 @@ Code coming soon</span>
 
 
 <div class="figure">
-<p><img src="./teaser.png" alt="teaser.png" style=":left;margin:0px 60px 0px 60px;" width="600px" />
+<p><img src="./teaser.png" alt="teaser.png" style=":left;margin:0px 30px 0px 30px;" width="800px" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Examples of the face-reenactment results using the proposed FACEGAN and recent baseline works FSGAN [1] and First-Order-motion-Model (FOM) [2]. FACEGAN is able to preserve the source identity faithfully while imposing the driving pose and expression. The baselines suffer particularly in preserving the facial shape of the source.</p>
 </div>
 
 
-<div id="outline-container-org745d390" class="outline-2">
-<h2 id="org745d390"><span class="section-number-2">1</span> Abstract</h2>
+<div id="outline-container-org0ff946f" class="outline-2">
+<h2 id="org0ff946f"><span class="section-number-2">1</span> Abstract</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The face reenactment is a popular facial animation method where the person’s identity is taken from the source image and the facial motion from the driving image. Recent works have demonstrated high quality results by combining the facial landmark based motion representations with the generative adversarial networks. These models perform best if the source and driving images depict the same person or if the facial structures are otherwise very similar. However, if the identity differs, the driving facial structures leak to the output distorting the reenactment result. We propose a novel Facial Attribute Controllable rEenactment GAN (FACEGAN), which transfers the facial motion from the driving face via the Action Unit (AU) representation. Unlike facial landmarks, the AUs are independent of the facial structure preventing the identity leak. Moreover, AUs provide a human interpretable way to control the reenactment. FACEGAN processes background and face regions separately for optimized output quality. The extensive quantitative and qualitative comparisons show a clear improvement over the state-of-the-art in a single source reenactment task. The results are best illustrated in the reenactment video provided below.
 </p>
 
-<iframe style="display: block; margin: auto;" width="600" height="400" src="https://www.youtube.com/embed/_XdZAEoDgnk" frameborder="0" allowfullscreen></iframe>
+<iframe style="display: block; margin: auto;" width="800" height="500" src="https://www.youtube.com/embed/_XdZAEoDgnk" frameborder="0" allowfullscreen></iframe>
 </div>
 </div>
 
-<div id="outline-container-org353144b" class="outline-2">
-<h2 id="org353144b"><span class="section-number-2">2</span> Key Idea</h2>
+<div id="outline-container-orge105e39" class="outline-2">
+<h2 id="orge105e39"><span class="section-number-2">2</span> Key Idea</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Most recent works<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup><sup>, </sup><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> use facial landmark points (key points in <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>) as the representation of the facial motion (pose and expression). Although landmarks can provide strong supervision of the driving motion, they also contain the overall structure of the driving face in the form of facial contours. If the driving landmarks are directly used to animate the source face, the difference between the facial contours may lead to dramatic distortions in the output result. Therefore, the gap in the facial shapes usually leads to either losing the source identity or low photorealism as shown in figure below.
@@ -294,7 +294,7 @@ Most recent works<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup><sup
 
 
 <div class="figure">
-<p><img src="./new_land.png" alt="new_land.png" style=":left;margin:0px 60px 0px 60px;" width="600px" />
+<p><img src="./new_land.png" alt="new_land.png" style=":left;margin:0px 30px 0px 30px;" width="800px" />
 </p>
 <p><span class="figure-number">Figure 2: </span>An illustration of the facial structure leaking problem in the landmark/keypoint based reenactment approach. The facial structure of the generated output clearly follows the shape of the driving face instead of source face as intended.</p>
 </div>
@@ -314,19 +314,30 @@ In this paper, we propose a Facial Attribute Controllable rEenactment GAN (FACEG
 </div>
 </div>
 
-<div id="outline-container-orgea2644e" class="outline-2">
-<h2 id="orgea2644e"><span class="section-number-2">3</span> Citation</h2>
+<div id="outline-container-org75ea6ed" class="outline-2">
+<h2 id="org75ea6ed"><span class="section-number-2">3</span> Citation</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 If you find this work useful in your research work then please cite us as:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-bibtex"><span style="color: #D9DAA2;">@InProceedings</span>{<span style="color: #339CDB;">Tripathy_2021_WACV</span>,
-<span style="color: #85DDFF;">author</span> = {Tripathy, Soumya and Kannala, Juho and Rahtu, Esa},
-<span style="color: #85DDFF;">title</span> = {FACEGAN: Facial Attribute Controllable rEenactment GAN},
-<span style="color: #85DDFF;">booktitle</span> = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
-<span style="color: #85DDFF;">year</span> = {2021}
+<pre class="src src-bibtex"><span style="color: #82aaff;">@InProceedings</span>{<span style="color: #f78c6c;">Tripathy_2021_WACV</span>,
+<span style="color: #ffcb6b;">author</span> = {Tripathy, Soumya and Kannala, Juho and Rahtu, Esa},
+<span style="color: #ffcb6b;">title</span> = {FACEGAN: Facial Attribute Controllable rEenactment GAN},
+<span style="color: #ffcb6b;">booktitle</span> = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+<span style="color: #ffcb6b;">year</span> = {2021}
+}
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-bibtex"><span style="color: #82aaff;">@InProceedings</span>{<span style="color: #f78c6c;">Tripathy_2020_WACV</span>,
+<span style="color: #ffcb6b;">author</span> = {Tripathy, Soumya and Kannala, Juho and Rahtu, Esa},
+<span style="color: #ffcb6b;">title</span> = {ICface: Interpretable and Controllable Face Reenactment Using GANs},
+<span style="color: #ffcb6b;">booktitle</span> = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+<span style="color: #ffcb6b;">month</span> = {March},
+<span style="color: #ffcb6b;">year</span> = {2020}
 }
 </pre>
 </div>
@@ -337,15 +348,16 @@ If you find this work useful in your research work then please cite us as:
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-Zakharov, E., Shysheya, A., Burkov, E., Lempitsky, V.: Few-shot adversarial learning of realistic neural talking head models. In: Proceedings of the IEEE International Conference on Computer Vision. (2019) 9459–9468For note keeping,
+Tripathy, S., Kannala, J., Rahtu, E.: Icface: Interpretable and controllable face reenactment using gans. In: The IEEE Winter Conference on Applications of
+Computer Vision. (2020) 3385–3394
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-Nirkin, Y., Keller, Y., Hassner, T.: FSGAN: Subject agnostic face swapping and reenactment. In: Proceedings of the IEEE International Conference on Computer Vision. (2019) 7184–7193
+Zakharov, E., Shysheya, A., Burkov, E., Lempitsky, V.: Few-shot adversarial learning of realistic neural talking head models. In: Proceedings of the IEEE International Conference on Computer Vision. (2019) 9459–9468.
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
-Siarohin, A., Lathuilière, S., Tulyakov, S., Ricci, E., Sebe, N.: First order motion model for image animation. In: Conference on Neural Information Processing Systems (NeurIPS). (2019)
+Nirkin, Y., Keller, Y., Hassner, T.: FSGAN: Subject agnostic face swapping and reenactment. In: Proceedings of the IEEE International Conference on Computer Vision. (2019) 7184–7193
 </p></div></div>
 
 
@@ -354,7 +366,7 @@ Siarohin, A., Lathuilière, S., Tulyakov, S., Ricci, E., Sebe, N.: First order 
 <div id="postamble" class="status">
 <p class="author">Author: Soumya Tripathy</p>
 <p class="email">Email: <a href="mailto:soumya.tripathy@tuni.fi">soumya.tripathy@tuni.fi</a></p>
-<p class="date">Created: 2020-11-11 Wed 16:46</p>
+<p class="date">Created: 2021-01-24 Sun 15:37</p>
 <p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
